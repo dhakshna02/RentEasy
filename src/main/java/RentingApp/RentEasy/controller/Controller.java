@@ -1,4 +1,48 @@
 package RentingApp.RentEasy.controller;
 
+import RentingApp.RentEasy.Rentservice.ProductService;
+import RentingApp.RentEasy.entity.ProductDetails;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
 public class Controller {
+
+private ProductService service;
+
+    @Autowired
+    public Controller(ProductService service) {
+        this.service = service;
+    }
+
+    @GetMapping("/products")
+    public List<ProductDetails> findall(){
+        return service.findall();
+    }
+
+    @GetMapping("/productdetails/{id}")
+    public ProductDetails findById(@PathVariable int id){
+        ProductDetails getProductById = service.findById(id);
+        if(getProductById == null){
+            throw new RuntimeException("Employee not found");
+        }
+        return getProductById;
+    }
+
+
+    @PostMapping("/upload")
+    public ProductDetails save(@RequestBody ProductDetails productForSave){
+        productForSave.setId(0);
+        service.save(productForSave);
+        return productForSave;
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(ProductDetails id){
+        service.delete(id);
+    }
+
 }
