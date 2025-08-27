@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentEasy - Welcome</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form id="signUpForm">
+            <h2>Create Account</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="or-text">or use your email for registration</p>
+            <div class="form-group"><i class="fas fa-user icon"></i><input type="text" id="name" placeholder="Name" required></div>
+            <div class="form-group"><i class="fas fa-envelope icon"></i><input type="email" id="signUpUsername" placeholder="Email" required></div>
+            <div class="form-group"><i class="fas fa-mobile-alt icon"></i><input type="tel" id="mobileNumber" placeholder="Mobile Number" required></div>
+            <div class="form-group password-group"><i class="fas fa-lock icon"></i><input type="password" id="signUpPassword" placeholder="Password" required><i class="fas fa-eye-slash toggle-password"></i></div>
+            <button type="submit" class="action-button">Sign Up</button>
+            <div id="signUpMessage" class="message"></div>
+        </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+        <form id="signInForm">
+            <div class="logo"><i class="fas fa-building"></i> RentEasy</div>
+            <h2>Sign In</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="or-text">or use your account</p>
+            <div class="form-group"><i class="fas fa-envelope icon"></i><input type="email" id="signInUsername" placeholder="Email" required></div>
+            <div class="form-group password-group"><i class="fas fa-lock icon"></i><input type="password" id="signInPassword" placeholder="Password" required><i class="fas fa-eye-slash toggle-password"></i></div>
+            <a href="#" class="forgot-password">Forgot your password?</a>
+            <button type="submit" class="action-button">Sign In</button>
+            <div id="signInMessage" class="message"></div>
+        </form>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost-button" id="signInButton">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start your journey with us</p>
+                <button class="ghost-button" id="signUpButton">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
