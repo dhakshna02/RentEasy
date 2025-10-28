@@ -1,5 +1,6 @@
 package RentingApp.RentEasy.dao;
 
+import RentingApp.RentEasy.entity.PostForProduct;
 import RentingApp.RentEasy.entity.ProductDetails;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -52,5 +53,18 @@ public class DaoImpl implements Dao {
         que.setParameter("productId",id);
         que.executeUpdate();
 
+    }
+    @Override
+    public void saves(PostForProduct productsave) {
+       PostForProduct saveProduct = entityManager.merge(productsave);
+
+        productsave.setId(saveProduct.getId());
+    }
+
+    @Override
+    public List<PostForProduct> findallPost() {
+        Query query = entityManager.createQuery("from PostForProduct");
+        List<PostForProduct> products = query.getResultList();
+        return products  ;
     }
 }

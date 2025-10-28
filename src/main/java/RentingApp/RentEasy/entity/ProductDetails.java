@@ -1,6 +1,7 @@
 package RentingApp.RentEasy.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.lang.reflect.Type;
@@ -40,6 +41,7 @@ public class ProductDetails {
 
     @Column(name="type")
     private String type;
+
 
 
     public ProductDetails(){
